@@ -46,10 +46,7 @@ public abstract class BluetoothRunnable implements Runnable {
         mBluetoothAdapter = bluetoothAdapter;
         mUuiDappIdentifier = uuiDappIdentifier;
         mMessageMode = messageMode;
-        mMyAdressMac = bluetoothAdapter.getAddress();
-        if (mMyAdressMac.equals("02:00:00:00:00:00")) {
-            mMyAdressMac = android.provider.Settings.Secure.getString(activity.getContentResolver(), "bluetooth_address");
-        }
+        mMyAdressMac = android.provider.Settings.Secure.getString(activity.getContentResolver(), "bluetooth_address");
         mIsConnected = false;
         mCountObjectInputStreamExection = 0;
     }
